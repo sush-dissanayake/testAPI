@@ -1,6 +1,9 @@
 ## Installation
 
-* Git pull this branch branch 
+* Get this repo.
+    ```sh
+       git clone https://github.com/sush-dissanayake/testAPI.git
+       ```  
 * Run `composer install` from project directory
 * Import database either from `testApi.sql` or through migration (use bellow commands)
    ```sh

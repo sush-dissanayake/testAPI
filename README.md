@@ -4,20 +4,43 @@
  ```sh
    git clone https://github.com/sush-dissanayake/testAPI.git
    ```
-* Run `composer install` from project directory
-* Import database either from `testApi.sql` or through migration (use bellow commands)
-   ```sh
-   php artisan migrate
-   php artisan db:seed
-   ```
+* Go to project directory
+  ```sh
+   cd testAPI
+   ```  
+* Run `composer install`
 
-### Authorized users
+
+##### Setup Database
+
+Database can be setp either from .sql file or through migrations and seeders.
+
+* ###### Import database from sql file
+    
+    * Import database using `testApi.sql` in project directory root.
+
+* ###### Use migration files
+	* Create a database named `testAPI`
+	* Create tables using migration files.
+
+       ```sh
+       php artisan migrate
+       ```
+   * Feed fake data to tables.
+		```sh
+       php artisan db:seed
+       ```		
+
+##### Setup Authorization
 
 * If `testAPi.sql` has been used, you can use following user for API access.
 	* username - test@example.com
 	* password - testadmin123
+	* client id - 2
+    * cliend secret - cp3thrYh0gOJZidhcUlpMttfSs0O84BnhAFxc5PB
 
-* Else generate a user. 
-	```sh
-   php artisan passport:install
-   ```
+* Else register a user and create oauth clients. 
+	* Go to http://localhost:8000/home and register a user
+    * Create oauth clients by running `php artisan passport:install`
+
+ 
